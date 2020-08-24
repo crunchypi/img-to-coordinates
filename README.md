@@ -22,6 +22,9 @@ A CLI tool for converting images to coordinate points. As shown below, some filt
 ![alt text](https://github.com/crunchypi/img2coordinates/blob/master/demo/screenshot.png?raw=true)
 
 
+#### Another example, animation in p5js https://editor.p5js.org/crunchypi/sketches/bGcjFyEEa:
+![alt text](https://raw.githubusercontent.com/crunchypi/img2coordinates/master/demo/doge.gif)
+
 
 ## CLI Usage (-help printout):
 
