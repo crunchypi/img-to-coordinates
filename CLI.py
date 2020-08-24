@@ -5,6 +5,39 @@ from points import PointImg
 import point_filter 
 
 
+
+help_s = '''
+-----------------------------------------------------
+CLI tool for converting images into coordinate points
+-----------------------------------------------------
+Basic usage:
+    Use each arg in the desired processing order
+    For example, if '-size' is called before '-o'
+    then the current progress is saved before a resize.
+
+Arguments:
+    -i            specifies input (image) path
+    -o            specifies output (point json) path
+    -size         specifies new size with x,y
+    -show         shows current progress (will exit)
+    -filtercolor  filters by color with exactly 6 ints
+                  rgb max
+    -thinner      specifies random thinning where only
+                  a percent of points remain.
+Examples:
+    Load cat.png, filter out any colors which are not
+    pure red and show.
+        -i cat.png -filtercolor 0,0,0,255,0,0 -show
+    Load cat.png, resize to 50,50 and show.
+        -i cat.png -size 100,100 -show
+    Load cat.png and thin out 90% pixels before showing.
+        -i cat.png -thinner 10 -show
+    Same as abovem but save instead of show
+        -i cat.png -thinner 10 -o data.json
+'''
+
+
+
 def arg_map() -> dict:
     ''' Returns a dict where keys describe
         argument identifier and are lists
@@ -22,6 +55,7 @@ def arg_map() -> dict:
         "-show"         :[0, show],
         "-filtercolor"  :[1, filtercolor],
         "-thinner"      :[1, thinner],
+        "-help"         :[0, help_print]
         
     }
 
@@ -46,7 +80,12 @@ def unpack_arg(arg:str, conversion_f,
             print(f'invalid value in {identifier}, quitting')
             sys.exit(1)
     return fixed_type_args
-   
+
+def help_print(_a:str, _b:PointImg, _c:str) -> None:
+    'prints out help str before program exit'
+    print(help_s)
+    sys.exit(1)
+
 def load(arg:str, pointImg:PointImg, _:str) -> PointImg:
     'Uses PIL to load image into PointIMG obj.'
     img = Image.open(arg)
