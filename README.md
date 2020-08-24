@@ -7,7 +7,7 @@ A CLI tool for converting images to coordinate points. As shown below, some filt
           "y": 90,      # // y is y coordinate
           "r": 1,       # // r is r in rgb
           "g": 1,       # // g is g in rgb
-          "b": 1        # // b is gb in rgb
+          "b": 1        # // b is g in rgb
        },
       ...,
     }
@@ -38,8 +38,8 @@ A CLI tool for converting images to coordinate points. As shown below, some filt
         -o            specifies output (point json) path
         -size         specifies new size with x,y
         -show         shows current progress (will exit)
-        -filtercolor  filters by color with exactly 6 ints
-                      rgb max
+        -filtercolor  filters by color with exactly 6 ints:
+                      r_max,g_max,_b_max, r_min_,g_min,b_min
         -thinner      specifies random thinning where only
                       a percent of points remain.
     Examples:
