@@ -26,7 +26,11 @@ class PointImg():
         self.points = points
 
     def to_img(self):
-        new = Image.new(mode='RGB', size=(self.width+1, self.height+1))
+        new = Image.new(
+            mode='RGB', 
+            size=(self.width+1, self.height+1), 
+            color=(255, 51, 204)
+        )
         for p in self.points:
             new.putpixel((p.coord[0], p.coord[1]),p.rgb)
         return new

@@ -96,7 +96,7 @@ def save(arg:str, pointImg:PointImg, _:str) -> None:
     'Saves PointIMG obj values into a path as json.'
     check_nonempty(pointImg)
     pointImg.save_json(arg)
-    os.exit(1)
+    sys.exit(1)
 
 def resize(arg:str, pointImg:PointImg, cmd:str) -> PointImg:
     'Uses PIL to resize image data in PointIMG obj.'
