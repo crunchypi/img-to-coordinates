@@ -1,4 +1,4 @@
-# img2coordinates
+# image to coordinates
 A CLI tool for converting images to coordinate points. As shown below, some filtering is supported, specifically color, neighbour count and random. Points can be saved as json (shown in root/demo/data.json). Point format is
   
     {
