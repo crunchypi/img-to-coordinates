@@ -178,4 +178,6 @@ def start() -> None:
             print(f'issue on {args[i]}: '+ 
                     f'\n\tException:{e}')
 
+            print("\n\n", help_s)
+
 start()
